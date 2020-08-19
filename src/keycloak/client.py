@@ -89,9 +89,9 @@ class KeycloakClient(object):
                 raise KeycloakClientError(original_exc=err)
 
             try:
-                return response #returning the whole response
+                return response.json()
             except ValueError:
-                return response.content
+                return response
 
     def close(self):
         if self._session is not None:
