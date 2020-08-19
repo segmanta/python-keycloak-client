@@ -89,7 +89,7 @@ class KeycloakClient(object):
                 raise KeycloakClientError(original_exc=err)
 
             try:
-                return response.json()
+                return response #returning the whole response
             except ValueError:
                 return response.content
 
